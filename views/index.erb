@@ -1,0 +1,17 @@
+<ul>
+  <% @recipes.each_with_index do |recipe, index|
+    rating = recipe.rating.nil? ? "" : " - #{recipe.rating}/5" %>
+    <li>
+      <ul>
+        <li>
+          <%="Recette N°#{index + 1} : #{recipe.name} (#{recipe.prep_time})#{rating}" %>
+        </li>
+        <li>
+          <%="Description : #{recipe.description}" %>
+        </li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<a href='/new'>Create a new recipe</a>
