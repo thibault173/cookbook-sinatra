@@ -31,10 +31,10 @@ get '/new' do
   erb :new
 end
 
-post '/' do
+post '/new' do
   # add cookbook
   recipe = Recipe.new(params[:name], params[:description], params[:prep_time], "false")
   cookbook.add_recipe(recipe)
-  # retour à l'index
-  erb :index
+  # retour a l'index
+  redirect '/'
 end
